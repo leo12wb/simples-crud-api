@@ -2,18 +2,18 @@
 
 namespace App\Services;
 
-use App\Model\Produtos;
+use App\Models\Produtos;
 
 class ProdutoService
 {
-    private function getService(){
+    public static function getService(){
 
         $funcao = new Produtos();
         $funcao = $funcao->paginate(15);
         return $funcao;
     }
 
-    private function storeService($data){
+    public static function storeService($data){
 
         $funcao = new Produtos();
         $funcao->nome = $data['nome'];

@@ -13,8 +13,8 @@ class ProdutosController extends Controller
         try {
             $response = ProdutoService::getService();
             return response()->json($response);
-        } catch (\Throwable $th) {
-            //throw $th;
+        } catch (\Exception $th) {
+            return $th;
         }
     }
 
